@@ -1,5 +1,10 @@
 # best-practices
 
+Edit 9/13 10:30pm - Make basic_test.sh more exhaustive
+- added SSSHtest to verify the behavior of code.
+- test for normal functionality with random numbers
+- test for exception when forcing bad input
+- correct small syntax errors in get_column_stats.py
 
 Edit 9/13 9:00pm - Overhaul get_column_stats.py
 - Separated functions & added main().

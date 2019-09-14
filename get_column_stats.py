@@ -43,7 +43,7 @@ def get_values(file, column):
         values from specified column
     """
 
-    file = open(file_name, 'r')
+    file = open(file, 'r')
     values = []
 
     for data in file:
@@ -107,10 +107,10 @@ def main():
         print('Failed to open ' + args.file + '; Permissions Error')
         sys.exit(1)
     except ValueError:
-        print(args.file + 'values must be integers; Confirm TSV formating')
+        print(args.file + ' values must be integers; Confirm TSV formating')
         sys.exit(1)
     except IndexError:
-        print('Column number' + str(args.column) + ' exceeds file index')
+        print('Column number ' + str(args.column) + ' exceeds file index')
         sys.exit(1)
 
     try:

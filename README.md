@@ -5,7 +5,7 @@
 An exercise in "best practices" for coding in python and hosting a repository.
 `style.py` is simple example of PEP 8 styling 
 `get_column_stats.py` is an example of "best practices" for a user-friendly interface with PEP 8 styling. 
-`basics_test.sh` 
+`basics_test.sh` shows error testing in a "best practices" style.
 
 ## Usage
 

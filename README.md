@@ -42,6 +42,9 @@ All functional tests should be passed.
 
 # Update History:
 
+Edit 9/19 11:30pm - Unittesting
+- failed to get flawless unittesting, if function not filtering as expected
+
 Edit 9/13 11:00pm - Put instructions in README
 
 Edit 9/13 10:30pm - Make basic_test.sh more exhaustive

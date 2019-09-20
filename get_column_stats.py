@@ -56,21 +56,38 @@ def get_values(file, column):
 def calc_mean(values):
 
     """
-    Finds the mean from given array of integers
+    Finds the mean from given array of integers,
+    Returns if there is at least one number passed
 
     Arguments
     ---------
-    values : int array
-        array of integers to calculate mean
+    values : numerical array
+        array of integers or floats to calculate mean
 
     Returns
     ---------
     mean : float
         mean of given array
     """
+    
 
-    mean = sum(values)/len(values)
-    return mean
+    if type(values) != list:
+            raise TypeError('Bad Argument, Requires list of numbers')
+    if len(values) == 0:
+        raise ZeroDivisionError('list is empty')
+    
+    s = []
+    for i in values:
+        if type(i) == int or float:
+            s.append(i)
+        else:
+            print('Skipping bad index')
+            continue
+    if len(s) != 0:
+        return sum(s)/len(s)
+    else:
+        raise TypeError('Bad Argument, Requires list of numbers') 
+        
 
 
 def calc_stdev(values, mean):
@@ -88,10 +105,33 @@ def calc_stdev(values, mean):
     stdev : float
         standard deviation of given array
     """
+    if mean == None:
+        mean = calc_mean(values)
+    
+    if type(mean) == int or float:
+        if type(values) == list:
+            if len(values) == 0:
+                raise ZeroDivisionError('list is empty')
 
-    stdev = math.sqrt(
-        sum([(mean-x)**2 for x in values]) / len(values))
-    return stdev
+            calc_array = []
+            for i in values:
+                if type(i) == int or float:
+                    print(type(i))  #debug line
+                    calc_array.append(i)
+                else:
+                    print('Skipping bad index')
+                    continue
+            if len(calc_array) == 0:
+                raise TypeError('Bad Argument, Requires list of numbers')
+                    
+            stdev = math.sqrt(sum([(float(mean)-float(x))**2 for x in calc_array]) / len(calc_array))
+            return stdev               
+        else:
+            raise TypeError('Bad Argument, Requires list of numbers')
+    else:
+        raise TypeError('Bad Second Argument: Use Number or None')
+
+
 
 
 def main():
